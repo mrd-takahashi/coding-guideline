@@ -15,7 +15,8 @@ CSS
 ----------------
 + セレクタのリセットは慎重に行う。アスタリスク(*)で全セレクタリセットはしない
 + インデント ⇒ 位置によって半角スペース1~2個。[インデントについて](#INDENT)
-+ ID/CLASS名は小文字。単語をつなげる場合はハイフン(-)を用いる
++ メンテナンス性を高めるためIDは極力使わない（IDは1ページに1カ所しか使用できないため）
++ ID/CLASS名は小文字。単語をつなげる場合はローワーキャメルケース(複合語の先頭を小文字で書き始める)を用いる
 + タイプセレクタはなるべく付けない ⇒``` NG:ul.list```,```OK:.list```
 + セレクタを複数指定する場合は、カンマ(,)で区切り改行
 + プロパティはショートハンドを使用する
@@ -31,17 +32,62 @@ CSS
 
 <a name="NAMING">命名規則
 ----------------
++ BEMを基本とした命名規則を使用します（カスタマイズ版）
+  + [BEM-Methodology-日本語訳](https://github.com/juno/bem-methodology-ja)
+    + [MindBEMding – getting your head ’round BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/))
+  + [BEMによるフロントエンドの設計 - 基本概念とルール | CodeGrid](https://app.codegrid.net/entry/bem-basic-1)
+
+### BEMについて 
+Block（塊）Element（要素）Modifier[KeyとValue]（状態変化）を略してBEM（ベム）と呼びます。  
+これらに当てはめ、classの命名規則に則って組み立てていきます。  
+ただし、本家の命名規則に則ると、アンスコ(_)やハイフン(-)を2連で使うなど非常に長いクラス名になるため、書き方をカスタマイズします。  
+
+#### 命名方法（カスタマイズ版）  
++ BlockとElementの区切りはアンスコ1個(_)
++ ModifierのKeyとValueはマルチクラスにする
++ BlockやElementを2つ以上の単語で表す時はローワーキャメルケース(複合語の先頭を小文字で書き始める)にする
+
+[例]タブでコンテンツ切り替える要素の場合（カスタマイズ）
+```css
+.item {…}
+.item_body {…}
+.item_body.stateActive {…}
+
+.itemNav {…}
+.itemNav_menu {…}
+.item_menu.stateActive {…}
+```
+
+```html
+<section class="item">
+  <nav class="itemNav">
+    <a class="itemNav_item stateActive" href="#">タブA</a>
+    <a class="itemNav_item" href="#">タブB</a>
+    <a class="itemNav_item" href="#">タブC</a>
+  </nav>
+  <div class="item_body stateActive">
+    タブAの本文
+  </div>
+  <div class="item_body">
+    タブBの本文
+  </div>
+  <div class="item_body">
+    タブCの本文
+  </div>
+</section>
+```
+
 + 推測できる名称をつける
-  + 短縮名を付ける場合は一般的に通じるかを考える(後日対応しても役割が推測できる名称にする) ⇒ [よく使われる短縮名](https://github.com/mrd-takahashi/coding-guideline/blob/master/SHORT_NAME.md)
+  + 短縮名はなるべく使用しない。どうしても使用する場合は一般的に通じるかを考える(後日対応しても役割が推測できる名称にする) ⇒ [よく使われる短縮名](https://github.com/mrd-takahashi/coding-guideline/blob/master/SHORT_NAME.md)
   + サイズや色などを具体的に表す名称は避ける ⇒ Viewが変更された場合、名称と実際の表示の整合性がとれなくなるため
-    + NG ⇒ ```.w960-box``` (w960pxのボックスの意) ボックスサイズが変更された場合、整合性がとれなくなる
+    + NG ⇒ ```.w960Box``` (w960pxのボックスの意) ボックスサイズが変更された場合、整合性がとれなくなる
     + NG ⇒ ```.red``` (文字色が赤いため) 色が変更になった場合、整合性がとれなくなる
-    + OK ⇒ ```.profile-box``` (プロフィールに使用するボックスの意) ボックスサイズが変更されても、プロフィールに関わる要素である事は変わらない
-    + OK ⇒ ```.txt-error```  (エラー用の文字色）文字色が変更されても、エラー文字の色設定である事は変わらない
+    + OK ⇒ ```.profileBox``` (プロフィールに使用するボックスの意) ボックスサイズが変更されても、プロフィールに関わる要素である事は変わらない
+    + OK ⇒ ```.stateError```  (エラー用の文字色）文字色が変更されても、エラー文字の色設定である事は変わらない
     + OK ⇒ ```.mab10```  (margin-bottom: 10px) 場合によって使用可。 ただし、規則性がなければならない。[『共通・汎用スタイル』参照](#COMMON)
-+ jQueryなどjs用のidまたはclassにはプレフィックス（接頭辞）```js-``` を付与する
-  + ```js-```  を持つidまたはclassには構造やスキン（見た目）の設定をしない
-  + ```js-```  とは別のidやclassを付与する事で構造やスキン（見た目）の設定をする
++ jQueryなどjs用のidまたはclassにはプレフィックス（接頭辞）```js_``` を付与する
+  + ```js_```  を持つidまたはclassには構造やスキン（見た目）の設定をしない
+  + ```js_```  とは別のidやclassを付与する事で構造やスキン（見た目）の設定をする
 
 
 ⇒ [命名のヒント](https://github.com/mrd-takahashi/coding-guideline/blob/master/CSS_NAMING_HINT.md)  

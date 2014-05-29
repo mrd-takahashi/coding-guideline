@@ -112,8 +112,6 @@ CSS
     + OK ⇒ ```.mab10```  (margin-bottom: 10px) 場合によって使用可。 ただし、規則性がなければならない。[『オプション』参照](#OPTION)
 + jQueryなどjs用のidまたはclassにはプレフィックス（接頭辞）```js_``` を付与する
 
-
-⇒ [命名のヒント](https://github.com/mrd-takahashi/coding-guideline/blob/master/CSS_NAMING_HINT.md)  
 ⇒ [よく使われる短縮名](https://github.com/mrd-takahashi/coding-guideline/blob/master/CSS_NAMING_HINT.md)
 
 

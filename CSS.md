@@ -5,53 +5,61 @@ CSS
 + [命名規則](#NAMING)
 + [目次と見出し](#HEADING)
 + [インデントについて](#INDENT)
-+ [共通・汎用スタイル](#COMMON)
-  + 汎用クラスの使用について
++ [共通](#COMMON)
 + [オプション](#OPTION)
+  + 汎用クラスの使用について
+  + z-indexを多用した時
 
 
 
 <a name="BASIC">基本
 ----------------
-+ セレクタのリセットは慎重に行う。アスタリスク(*)で全セレクタリセットはしない
-+ インデント ⇒ 位置によって半角スペース1~2個。[インデントについて](#INDENT)
-+ メンテナンス性を高めるためIDは極力使わない（IDは1ページに1カ所しか使用できないため）
-+ ID/CLASS名は小文字。単語をつなげる場合はローワーキャメルケース(複合語の先頭を小文字で書き始める)を用いる
-+ タイプセレクタはなるべく付けない ⇒``` NG:ul.list```,```OK:.list```
-+ セレクタを複数指定する場合は、カンマ(,)で区切り改行
-+ プロパティはショートハンドを使用する
-+ プロパティが1つまたは2つであれば1行で記述してもOK
-+ 値が『0』の場合は単位を付けない
-+ 透過指定をがある場合はrgba指定をする。その他は16進数で指定し、できる限り省略する
-+ 要素同士の空間は極力margin-bottomで設定する ⇒ ページ毎の設定にズレを生じさせないため
-+ 基本フォントサイズは16px〜14px(ブラウザの基本サイズが16px)
-+ 最小フォントサイズは10px(Chromeの初期設定値は10px以下を全て10pxで描画する)
-+ @importを使わずlinkを使用する
-+ できる限り1ファイルに記述をまとめるようにする。ただし、リセット用のスタイルは別ファイルでもOK
+1. リセット
+  + セレクタのリセットは慎重に行う。アスタリスク(*)で全セレクタリセットはしない
+1. インデント
+  + インデント ⇒ 位置によって半角スペース1~2個。[インデントについて](#INDENT)
+1. ID/CLASS
+  + メンテナンス性を高めるためIDは極力使わない（IDは1ページに1カ所しか使用できないため）
+  + ID/CLASS名は小文字。単語をつなげる場合はローワーキャメルケース(複合語の先頭を小文字で書き始める)を用いる
+  1. セレクタ
+    + タイプセレクタはなるべく付けない ⇒``` NG:ul.list```,```OK:.list```
+    + セレクタを複数指定する場合は、カンマ(,)で区切り改行
+  1. プロパティ
+    + プロパティはショートハンドを使用する
+    + プロパティが1つまたは2つであれば1行で記述してもOK
+    + 値が『0』の場合は単位を付けない
+    + 透過指定をがある場合はrgba指定をする。その他は16進数で指定し、できる限り省略する
+    + 要素同士の空間は極力margin-bottomで設定する ⇒ ページ毎の設定にズレを生じさせないため規則性を持たせる
+1. フォント
+  + 基本フォントサイズは16px〜14px(ブラウザの基本サイズが16px)
+  + 最小フォントサイズは10px(Chromeの初期設定値は10px以下を全て10pxで描画する)
+1. CSSの読み込み方
+  + @importを使わずlinkを使用する
+  + できる限り1ファイルに記述をまとめるようにする。ただし、リセット用のスタイルは別ファイルでもOK
 
 
 <a name="NAMING">命名規則
 ----------------
 + BEMを基本とした命名規則を使用します（カスタマイズ版）
-  + [BEM-Methodology-日本語訳](https://github.com/juno/bem-methodology-ja)
-    + [MindBEMding – getting your head ’round BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/))
+  + [MindBEMding – getting your head ’round BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/))
+    + [BEM-Methodology-日本語訳](https://github.com/juno/bem-methodology-ja)
   + [BEMによるフロントエンドの設計 - 基本概念とルール | CodeGrid](https://app.codegrid.net/entry/bem-basic-1)
 
 ### BEMについて 
-Block（塊）Element（要素）Modifier[KeyとValue]（状態変化）を略してBEM（ベム）と呼びます。  
+*Block（塊）Element（要素）Modifier[KeyとValue]（状態変化）*を略して*BEM*（ベム）と呼びます。  
 これらに当てはめ、classの命名規則に則って組み立てていきます。  
 ただし、本家の命名規則に則ると、アンスコ(_)やハイフン(-)を2連で使うなど非常に長いクラス名になるため、書き方をカスタマイズします。  
 
 #### 命名方法（カスタマイズ版）  
 + BlockとElementの区切りはアンスコ1個(_)
-+ ModifierのKeyとValueはマルチクラスにする
-+ BlockやElementを2つ以上の単語で表す時はローワーキャメルケース(複合語の先頭を小文字で書き始める)にする
++ ModifierのKeyとValueのつなぎはローワキャメルケースにする
++ BlockやElementを2つ以上の単語で表す時はローワーキャメルケースにする
 
 [例]タブでコンテンツ切り替える要素の場合（カスタマイズ）
 ```css
 .item {…}
 .item_body {…}
-.item_body.stateActive {…}
+.item_body.stateAtive {…}
 
 .itemNav {…}
 .itemNav_menu {…}
@@ -61,9 +69,9 @@ Block（塊）Element（要素）Modifier[KeyとValue]（状態変化）を略�
 ```html
 <section class="item">
   <nav class="itemNav">
-    <a class="itemNav_item stateActive" href="#">タブA</a>
-    <a class="itemNav_item" href="#">タブB</a>
-    <a class="itemNav_item" href="#">タブC</a>
+    <a class="itemNav_menu stateActive" href="#">タブA</a>
+    <a class="itemNav_menu" href="#">タブB</a>
+    <a class="itemNav_menu" href="#">タブC</a>
   </nav>
   <div class="item_body stateActive">
     タブAの本文
@@ -77,6 +85,23 @@ Block（塊）Element（要素）Modifier[KeyとValue]（状態変化）を略�
 </section>
 ```
 
+##### 考え方  
+タブでコンテンツを切り替えている場合、2つのブロックに分けて考える事ができます。  
+
+1. タブで切り替えをするコンテンツのエリア
+1. タブで切り替えをするコンテンツのエリアに内包されているナビゲーションエリア  
+
+ブロックに切り分ける事ができれば、BEMの基本的な命名規則に則ってクラス名を確定させます。  
+
+1. タブで切り替えするコンテンツのエリアを1つのBlockと考える ⇒ ```.item```(Block)
+  - タブをクリックする事によって切り替わる要素（本文）をElementと考える ⇒ ```.item_body```(Element)
+    - 表示されている要素（本文）の状態 ⇒ ```.stateActive```(Modifier[Key Value])
+     
+2. ナビゲーションエリアを1つのBlockと考える ⇒```.itemNav```(Block)
+   - 各タブは要素と考える ⇒ ```.itemNav_menu```(Element)
+    - 選択したタブの状態 ⇒ ```.stateActive```(Modifier[Key Value])  
+
+### その他    
 + 推測できる名称をつける
   + 短縮名はなるべく使用しない。どうしても使用する場合は一般的に通じるかを考える(後日対応しても役割が推測できる名称にする) ⇒ [よく使われる短縮名](https://github.com/mrd-takahashi/coding-guideline/blob/master/SHORT_NAME.md)
   + サイズや色などを具体的に表す名称は避ける ⇒ Viewが変更された場合、名称と実際の表示の整合性がとれなくなるため
@@ -84,10 +109,8 @@ Block（塊）Element（要素）Modifier[KeyとValue]（状態変化）を略�
     + NG ⇒ ```.red``` (文字色が赤いため) 色が変更になった場合、整合性がとれなくなる
     + OK ⇒ ```.profileBox``` (プロフィールに使用するボックスの意) ボックスサイズが変更されても、プロフィールに関わる要素である事は変わらない
     + OK ⇒ ```.stateError```  (エラー用の文字色）文字色が変更されても、エラー文字の色設定である事は変わらない
-    + OK ⇒ ```.mab10```  (margin-bottom: 10px) 場合によって使用可。 ただし、規則性がなければならない。[『共通・汎用スタイル』参照](#COMMON)
+    + OK ⇒ ```.mab10```  (margin-bottom: 10px) 場合によって使用可。 ただし、規則性がなければならない。[『オプション』参照](#OPTION)
 + jQueryなどjs用のidまたはclassにはプレフィックス（接頭辞）```js_``` を付与する
-  + ```js_```  を持つidまたはclassには構造やスキン（見た目）の設定をしない
-  + ```js_```  とは別のidやclassを付与する事で構造やスキン（見た目）の設定をする
 
 
 ⇒ [命名のヒント](https://github.com/mrd-takahashi/coding-guideline/blob/master/CSS_NAMING_HINT.md)  
@@ -158,7 +181,7 @@ img□{border:□0;□vertical-align:□top;}
 > ⇒  タブサイズ2,『スペースとして挿入』チェック  
 
 
-<a name="COMMON">共通・汎用スタイル
+<a name="COMMON">共通
 ----------------
 以下は必ず記述しなければならない共通スタイルです。プロパティは変更の必要があれば各案件用に記述する事。
 
@@ -223,6 +246,10 @@ p {margin-bottom: 20px;}
 オリジナルテーマを作った時はこの設定も入れた方が良いため、共通スタイルに組み込まれています。
 
 
+<a name="OPTION">オプション
+----------------
+必要があれば使用します（任意）
+
 ###汎用クラス(marginやpaddingなどのモジュール)の使用について  
 ```CSS
 .ma10 {margin: 10px;}
@@ -278,11 +305,7 @@ OOCSSなどのオブジェクト指向のCSS設計では構造とスキン（見
 
 マイナス値を設定する場合は冒頭に『n』を付けます（n = negative）  
 [例].nmt10 ⇒ margin-top:-10px;
-
-
-<a name="OPTION">オプション
-----------------
-必要があれば使用します（任意）  
+  
 
 **z-indexを多用した時**  
 以下のようなメモがあると後日追加する時にわかりやすい  

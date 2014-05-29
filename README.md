@@ -7,5 +7,4 @@ coding-guideline
   + [META](https://github.com/mrd-takahashi/coding-guideline/blob/master/META.md)
 + [画像](https://github.com/mrd-takahashi/coding-guideline/blob/master/IMAGES.md)
 + [CSS](https://github.com/mrd-takahashi/coding-guideline/blob/master/CSS.md)
-  + BEMに変更するため作成中~~[命名のヒント](https://github.com/mrd-takahashi/coding-guideline/blob/master/CSS_NAMING_HINT.md)~~
 + [よく使われる短縮名](https://github.com/mrd-takahashi/coding-guideline/blob/master/SHORT_NAME.md)

@@ -41,13 +41,15 @@ HTML
 + link要素
 + rel属性
   + stylecheet
-  + shortcut icon(apple-touch-icon) ⇒[参考](https://github.com/mrd-takahashi/coding-guideline/blob/master/ETC.md)
+  + shortcut icon(apple-touch-icon) 
   + canonical //URL正規タグ http://web-tan.forum.impressrd.jp/e/2009/03/05/5112
   + alternate //RSSフィードの指定
 + script要素
+  +IE9未満もターゲットブラウザに入る場合は```html5.js``` を読み込む ⇒ IE9未満でもhtml5のタグが使用できるようになる
 + style要素
 + object要素
 + その他  
+[OGP](http://l-w-i.net/d/20130316_01.txt)、[Twitter Cards](http://l-w-i.net/d/20130324_01.txt)の設定が必要な場合は上記に追加する。
 
 ### タイトル要素   
 指定がない場合は下記の内容で表示  

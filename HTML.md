@@ -123,13 +123,13 @@ NG  ```<a href="../mypage/page.html">```
 ```html
 <section>
 □□<div id="profile">
-□□□□<div class="profile-detail">
-□□□□□□<div class="profile-img">
+□□□□<div class="profile_detail">
+□□□□□□<div class="profile_img">
 □□□□□□□□<img src="photo.jpg" height=100 width=100  alt="プロフィール画像">
 □□□□□□</div>
 □□□□□□<p>テキストテキストテキストテキストテキストテキスト<br>
 □□□□□□テキストテキストテキストテキストテキストテキスト</p>
-□□□□</div><!-- /.profile-detail -->
+□□□□</div><!-- /.profile_detail -->
 □□</div><!-- /#profile -->
 </section>
 ```

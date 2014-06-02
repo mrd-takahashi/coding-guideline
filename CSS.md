@@ -44,6 +44,9 @@ CSS
   + [MindBEMding – getting your head ’round BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/))
     + [BEM-Methodology-日本語訳](https://github.com/juno/bem-methodology-ja)
   + [BEMによるフロントエンドの設計 - 基本概念とルール | CodeGrid](https://app.codegrid.net/entry/bem-basic-1)
++ オブジェクト指向CSSについて
+ + [今必要なCSSアーキテクチャ](http://www.slideshare.net/MayuKimura/css-25547100) 
+ + [OOCSS(Object-Oriented CSS)の考え方](http://d.hatena.ne.jp/in0in0/20100208/1265657205)
 
 ### BEMについて 
 *Block（塊）Element（要素）Modifier[KeyとValue]（状態変化）*を略して*BEM*（ベム）と呼びます。  
@@ -52,7 +55,7 @@ CSS
 
 #### 命名方法（カスタマイズ版）  
 + BlockとElementの区切りはアンスコ1個(_)
-+ ModifierのKeyとValueのつなぎはローワキャメルケースにする
++ ModifierのKeyとValueのつなぎはローワーキャメルケースにする
 + BlockやElementを2つ以上の単語で表す時はローワーキャメルケースにする
 
 [例]タブでコンテンツ切り替える要素の場合（カスタマイズ）
@@ -109,14 +112,10 @@ CSS
     + NG ⇒ ```.red``` (文字色が赤いため) 色が変更になった場合、整合性がとれなくなる
     + OK ⇒ ```.profileBox``` (プロフィールに使用するボックスの意) ボックスサイズが変更されても、プロフィールに関わる要素である事は変わらない
     + OK ⇒ ```.stateError```  (エラー用の文字色）文字色が変更されても、エラー文字の色設定である事は変わらない
-    + OK ⇒ ```.mab10```  (margin-bottom: 10px) 場合によって使用可。 ただし、規則性がなければならない。[『オプション』参照](#OPTION)
+    + OK ⇒ ```.mb10```  (margin-bottom: 10px;) 場合によって使用可。 ただし、規則性がなければならない。[『オプション』参照](#OPTION)
 + jQueryなどjs用のidまたはclassにはプレフィックス（接頭辞）```js_``` を付与する
 
 ⇒ [よく使われる短縮名](https://github.com/mrd-takahashi/coding-guideline/blob/master/CSS_NAMING_HINT.md)
-
-
-参考:<a href="http://www.slideshare.net/MayuKimura/css-25547100" target="_blank">今必要なCSSアーキテクチャ</a>  
-参考:<a href="http://d.hatena.ne.jp/in0in0/20100208/1265657205">OOCSS(Object-Oriented CSS)の考え方</a>
 
 
 <a name="HEADING">目次と見出し

@@ -58,31 +58,30 @@ CSS
 + ModifierのKeyとValueのつなぎはローワーキャメルケースにする
 + BlockやElementを2つ以上の単語で表す時はローワーキャメルケースにする
 
-[例]タブでコンテンツ切り替える要素の場合（カスタマイズ）
+[例]タブでコンテンツ切り替える要素の場合
 ```css
-.item {…}
-.item_body {…}
-.item_body.stateAtive {…}
-
 .itemNav {…}
 .itemNav_menu {…}
 .item_menu.stateActive {…}
+
+.itemBody {…}
+.itemBody.stateAtive {…}
 ```
 
 ```html
-<section class="item">
+<section>
   <nav class="itemNav">
     <a class="itemNav_menu stateActive" href="#">タブA</a>
     <a class="itemNav_menu" href="#">タブB</a>
     <a class="itemNav_menu" href="#">タブC</a>
   </nav>
-  <div class="item_body stateActive">
+  <div class="itemBody stateActive">
     タブAの本文
   </div>
-  <div class="item_body">
+  <div class="itemBody">
     タブBの本文
   </div>
-  <div class="item_body">
+  <div class="itemBody">
     タブCの本文
   </div>
 </section>
@@ -91,18 +90,18 @@ CSS
 ##### 考え方  
 タブでコンテンツを切り替えている場合、2つのブロックに分けて考える事ができます。  
 
-1. タブで切り替えをするコンテンツのエリア
-1. タブで切り替えをするコンテンツのエリアに内包されているナビゲーションエリア  
+1. ナビゲーションエリア 
+1. タブで切り替わるコンテンツ
 
 ブロックに切り分ける事ができれば、BEMの基本的な命名規則に則ってクラス名を確定させます。  
 
-1. タブで切り替えするコンテンツのエリアを1つのBlockと考える ⇒ ```.item```(Block)
-  - タブをクリックする事によって切り替わる要素（本文）をElementと考える ⇒ ```.item_body```(Element)
-    - 表示されている要素（本文）の状態 ⇒ ```.stateActive```(Modifier[Key Value])
-     
-2. ナビゲーションエリアを1つのBlockと考える ⇒```.itemNav```(Block)
+1. ナビゲーションエリアを1つのBlockと考える ⇒```.itemNav```(Block)
    - 各タブは要素と考える ⇒ ```.itemNav_menu```(Element)
-    - 選択したタブの状態 ⇒ ```.stateActive```(Modifier[Key Value])  
+    - 選択したタブの状態 ⇒ ```.stateActive```(Modifier[Key Value]) 
+	
+1. タブで切り替わるコンテンツを1つのBlockと考える ⇒ ```.itemBody```(Block)
+   - 表示されているブロックの状態 ⇒ ```.stateActive```(Modifier[Key Value])
+     
 
 ### その他    
 + 推測できる名称をつける

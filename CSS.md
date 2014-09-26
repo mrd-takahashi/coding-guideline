@@ -55,7 +55,7 @@ CSS
 
 #### 命名方法（カスタマイズ版）  
 + BlockとElementの区切りはアンスコ1個(_)
-+ ModifierのKeyとValueのつなぎはローワーキャメルケースにする
++ ModifierのKeyとValueのつなぎはハイフン1個(-)
 + BlockやElementを2つ以上の単語で表す時はローワーキャメルケースにする
 
 [例]タブでコンテンツ切り替える要素の場合
@@ -71,11 +71,11 @@ CSS
 ```html
 <section>
   <nav class="itemNav">
-    <a class="itemNav_menu stateActive" href="#">タブA</a>
+    <a class="itemNav_menu state-active" href="#">タブA</a>
     <a class="itemNav_menu" href="#">タブB</a>
     <a class="itemNav_menu" href="#">タブC</a>
   </nav>
-  <div class="itemBody stateActive">
+  <div class="itemBody state-active">
     タブAの本文
   </div>
   <div class="itemBody">
@@ -97,10 +97,10 @@ CSS
 
 1. ナビゲーションエリアを1つのBlockと考える ⇒```.itemNav```(Block)
    - 各タブは要素と考える ⇒ ```.itemNav_menu```(Element)
-    - 選択したタブの状態 ⇒ ```.stateActive```(Modifier[Key Value]) 
+    - 選択したタブの状態 ⇒ ```.state-active```(Modifier[Key Value]) 
 	
 1. タブで切り替わるコンテンツを1つのBlockと考える ⇒ ```.itemBody```(Block)
-   - 表示されているブロックの状態 ⇒ ```.stateActive```(Modifier[Key Value])
+   - 表示されているブロックの状態 ⇒ ```.state-active```(Modifier[Key Value])
      
 
 ### その他    
@@ -110,7 +110,7 @@ CSS
     + NG ⇒ ```.w960Box``` (w960pxのボックスの意) ボックスサイズが変更された場合、整合性がとれなくなる
     + NG ⇒ ```.red``` (文字色が赤いため) 色が変更になった場合、整合性がとれなくなる
     + OK ⇒ ```.profileBox``` (プロフィールに使用するボックスの意) ボックスサイズが変更されても、プロフィールに関わる要素である事は変わらない
-    + OK ⇒ ```.stateError```  (エラー用の文字色）文字色が変更されても、エラー文字の色設定である事は変わらない
+    + OK ⇒ ```.state-error```  (エラー用の文字色）文字色が変更されても、エラー文字の色設定である事は変わらない
     + OK ⇒ ```.mb10```  (margin-bottom: 10px;) 場合によって使用可。 ただし、規則性がなければならない。[『オプション』参照](#OPTION)
 + jQueryなどjs用のidまたはclassにはプレフィックス（接頭辞）```js_``` を付与する
 
